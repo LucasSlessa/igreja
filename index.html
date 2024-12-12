@@ -43,6 +43,9 @@
             background: #1a1a1a;
             color: var(--snow-white);
         }
+        html{
+            scroll-behavior: smooth;
+        }
 
         /* Header Styles */
         header {
@@ -269,7 +272,28 @@
                 margin-top: 2rem; /* Espaço extra para evitar sobreposição */
             }
         }
-
+        @media (max-width: 400px) {
+            .countdown {
+                display: flex; /* Ativa o Flexbox */
+                flex-wrap: wrap; /* Permite quebrar os itens em várias linhas */
+                justify-content: space-between; /* Distribui os itens igualmente */
+                align-items: center; /* Alinha os itens verticalmente no centro */
+                text-align: center; /* Centraliza o texto */
+            }
+            
+            .countdown > div {
+                flex: 1 1 30%; /* Faz com que cada item ocupe até 30% da largura disponível */
+                text-align: center;
+                padding: 10px;
+                box-sizing: border-box; /* Garante que o padding não afete o tamanho total */
+            }
+            
+            .hero-content {
+                padding-top: 2rem;
+            }
+            
+            
+        }
         
         @media (max-width: 500px) {
             .hero-content {
@@ -282,8 +306,7 @@
                 animation: fadeIn 1s ease-out;
                 margin-top: -120px;
             }
-    
-          
+
 
             .nav-links {
                 display: none;
@@ -562,7 +585,7 @@
                 </div>
             </section>
     
-            <section class="neumorphic-card p-6 mb-8">
+            <section id="meta" class="neumorphic-card p-6 mb-8">
                 <h2 class="text-3xl font-semibold mb-4 text-yellow-300">
                     Cestas Básicas
                 </h2>
@@ -618,7 +641,7 @@
             </section>
         </main>
 
-        <section class="prayer-request-section">
+        <section class="prayer-request-section" id="contact">
             <h2 class="form-title">Envie Seu Pedido de Oração</h2>
             <form class="prayer-form" id="prayerForm">
                 <div class="form-group">

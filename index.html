@@ -251,6 +251,98 @@
             }
         }
 
+                /* Melhor responsividade para contagem regressiva */
+        @media (max-width: 768px) {
+            .countdown {
+                position: absolute; /* Remove posicionamento absoluto */
+                margin-top: 2rem;
+               
+                gap: 1rem;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero-content {
+                margin-top: 2rem; /* Espaço extra para evitar sobreposição */
+            }
+        }
+        .prayer-request-section {
+            padding: 2rem;
+            background: var(--glass-bg);
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            max-width: 500px;
+            margin: 2rem auto;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--green-dark);
+        }
+        
+        .prayer-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        
+        .form-group label {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--green-dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            font-size: 1rem;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--green-dark);
+            outline: none;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--green-light);
+            box-shadow: 0 0 5px var(--green-light);
+        }
+        
+        .submit-button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            background: var(--red-soft);
+            color: var(--snow-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background: var(--green-light);
+            transform: translateY(-2px);
+        }
+        
+
      
         
     </style>
@@ -496,7 +588,43 @@
                 </div>
             </section>
         </main>
-    
+
+        <section class="prayer-request-section">
+            <h2 class="form-title">Envie Seu Pedido de Oração</h2>
+            <form class="prayer-form" id="prayerForm">
+                <div class="form-group">
+                    <label for="name">Seu Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail (Opcional)</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+                </div>
+                <div class="form-group">
+                    <label for="message">Pedido de Oração</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Escreva seu pedido..." required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Enviar Pedido</button>
+            </form>
+        </section>
+        
+        <script>
+            document.getElementById("prayerForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+            
+                const name = document.getElementById("name").value;
+                const message = document.getElementById("message").value;
+            
+                const whatsappNumber = "5512983110824"; // Substitua pelo número desejado
+                const whatsappLink = `https://wa.me/${whatsappNumber}?text=Pedido%20de%20Oração:%0A%0ANome:%20${encodeURIComponent(
+                    name
+                )}%0A%0AMensagem:%20${encodeURIComponent(message)}`;
+            
+                window.open(whatsappLink, "_blank");
+            });
+            
+            </script>
+            
         <script>
             function copyPix() {
                 const pixKey = "saojosedoscampospd@cesnt.com.br";

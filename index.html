@@ -269,6 +269,35 @@
                 margin-top: 2rem; /* Espaço extra para evitar sobreposição */
             }
         }
+
+        
+        @media (max-width: 500px) {
+            .hero-content {
+                max-width: 800px;
+                padding: 2rem;
+                background: rgba(255, 250, 250, 0.9);
+                border-radius: 20px;
+                box-shadow: var(--card-shadow);
+                backdrop-filter: blur(10px);
+                animation: fadeIn 1s ease-out;
+                margin-top: -120px;
+            }
+    
+          
+
+            .nav-links {
+                display: none;
+            }
+
+            .countdown {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .countdown-item {
+                min-width: 80px;
+            }
+        }
         .prayer-request-section {
             padding: 2rem;
             background: var(--glass-bg);

@@ -755,9 +755,11 @@
                 const pixKey = "12991465676";
                 navigator.clipboard.writeText(pixKey).then(() => {
                     alert("Chave PIX copiada com sucesso!");
+                    document.getElementById("donation-popup").style.display = "none";
                 }).catch(err => {
                     console.error('Erro ao copiar: ', err);
                 });
+
             }
         </script>
     </body>
@@ -765,6 +767,8 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+
     
     <script>
         // Inicialização AOS

@@ -755,7 +755,7 @@
                 const pixKey = "12991465676";
                 navigator.clipboard.writeText(pixKey).then(() => {
                     alert("Chave PIX copiada com sucesso!");
-                    document.getElementById("donation-popup").style.display = "none";
+                    document.getElementById("donation-popup").style.display = "flex";
                 }).catch(err => {
                     console.error('Erro ao copiar: ', err);
                 });
